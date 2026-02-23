@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Playfair Display", serif;
+  
+  --color-twa-red: #FF3131;
+  --color-twa-green: #8CC63F;
+  --color-twa-charcoal: #121212;
+  --color-twa-black: #0A0A0A;
+}
+
+@layer base {
+  body {
+    @apply bg-twa-black text-white font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  .twa-card {
+    @apply bg-twa-charcoal border border-white/5 rounded-xl p-6 shadow-2xl;
+  }
+  
+  .twa-button-primary {
+    @apply bg-twa-red hover:bg-red-600 text-white font-semibold px-8 py-3 rounded-lg transition-all duration-200 active:scale-95;
+  }
+  
+  .twa-button-secondary {
+    @apply bg-transparent border border-twa-green text-twa-green hover:bg-twa-green/10 font-semibold px-8 py-3 rounded-lg transition-all duration-200 active:scale-95;
+  }
+
+  .twa-table-header {
+    @apply text-xs uppercase tracking-widest text-white/40 font-mono py-4 px-4 border-b border-white/10;
+  }
+
+  .twa-table-row {
+    @apply border-b border-white/5 hover:bg-white/5 transition-colors cursor-pointer;
+  }
+
+  .twa-table-cell {
+    @apply py-4 px-4 text-sm font-mono;
+  }
+}
